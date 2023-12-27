@@ -10,7 +10,7 @@ const FancyTerminal: React.FC = () => {
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const completionWords = ['home', 'contact', 'projects', 'about'];
+    const completionWords = ['home', 'contact', 'projects', 'about', '/home', '/about', '/contact', '/projects'];
     const availablePages = ['/home', '/about', '/contact', '/projects'];
     const availableCommands = [
         {
@@ -113,7 +113,9 @@ const FancyTerminal: React.FC = () => {
         const response = handleCommand(input);
 
         // Update the output with the command and response
-        setOutput((prevOutput) => [...prevOutput, `visitor@eugen-portfolio:~$ ${input}`, response]);
+        if(input.toLowerCase() === 'cls' || input.toLowerCase() === 'clear') {
+            null
+        } else setOutput((prevOutput) => [...prevOutput, `visitor@eugen-portfolio:~$ ${input}`, response]);
 
         // Clear the input
         setInput('');
@@ -227,8 +229,8 @@ const FancyTerminal: React.FC = () => {
                         return (
                             <div key={index} className="mb-2 md:mb-4 text-sm md:text-lg">
                                 <pre>
-                                    <span className='text-yellow-500'>visitor</span>@<span className='text-green-500'>eugen-portfolio</span><span className='text-red-400'>:~</span>
-                                    ${responsePart}
+                                    <span className='text-yellow-500 font-bold'>visitor</span><span className='font-bold'>@</span><span className='text-green-500 font-bold'>eugen-portfolio</span><span className='text-red-500 font-bold'>:~</span>
+                                    <span className='font-bold'>$</span>{responsePart}
                                 </pre>
                             </div>
                         );
@@ -243,7 +245,7 @@ const FancyTerminal: React.FC = () => {
                 })}
                 <div ref={inputRef}></div>
                 {isHelp && (
-                    <div className='mb-2 md:mb-4 flex flex-wrap flex-col flex-1'>
+                    <div className='mb-2 md:mb-4 flex flex-wrap flex-col flex-1 font-bold'>
                         {availableCommands.map(({ cmd, descr }) => (
                             <div key={cmd} className="md:ml-17">
                                 <pre>
@@ -261,7 +263,7 @@ const FancyTerminal: React.FC = () => {
             >
                 <div className='flex flex-col md:flex-row'>
                     <pre className=" text-[#d4d4d4] font-bold text-sm md:text-lg pr-2">
-                        <span className='text-yellow-500'>visitor</span>@<span className='text-green-500'>eugen-portfolio</span><span className='text-red-400'>:~</span>$</pre>
+                        <span className='text-yellow-500'>visitor</span>@<span className='text-green-500'>eugen-portfolio</span><span className='text-red-500'>:~</span>$</pre>
                     <div className='flex-row'>
                         <span className="md:hidden text-[#d4d4d4] font-bold text-sm md:text-lg pr-2">&gt;</span>
                         <input
