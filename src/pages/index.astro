@@ -1,0 +1,44 @@
+---
+import Footer from '../components/Footer.astro';
+import Greetings from '../components/Greetings';
+import AnsiText from '../components/Header';
+import Navbar from '../components/Navbar';
+import FancyTerminal from '../components/Terminal';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body class="fade">
+		<Navbar/>
+		<div class="mt-10">
+            <AnsiText message='home'/>
+        </div>
+		<div class="flex flex-col flex-1">
+			<Greetings client:visible/>
+			<FancyTerminal client:only/>
+		</div>
+	</body>
+	<Footer/>
+</html>
+
+<style>
+	h1 {
+		padding-left: 10px;
+	}
+	body {
+		background-color: #1e1e1e; /* Set the background color to match the terminal */
+		color: #d4d4d4; /* Set the text color */
+		font-family: monospace; /* Set the font family to monospace */
+		user-select: none;
+	}
+	.fade-enter, .fade-leave-to {
+		opacity: 0;
+		transition: opacity 0.9s ease-in-out;
+	}
+</style>
