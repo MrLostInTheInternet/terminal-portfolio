@@ -6,6 +6,9 @@ const Profile = () => {
     const [infoText1, setInfoText1] = useState<string>('');
     const [infoText2, setInfoText2] = useState<string>('');
     const [infoText3, setInfoText3] = useState<string>('');
+    const [infoText4, setInfoText4] = useState<string>('');
+    const [infoText5, setInfoText5] = useState<string>('');
+
     const age = new Date().getFullYear() - 1999;
     const info1 = `
 ----------------Personal Informations----------------\n
@@ -13,6 +16,8 @@ const Profile = () => {
     ~ Name:         Eugen Iofciu Vasile\n
     ~ Age:          ${age} years old\n
     ~ Knowledge:    Mechanic and Junior Developer\n
+    ~ Nationality:  Romanian\n
+    ~ Localion:     Bologna, Italy\n
     `;
 
     const info2 = `
@@ -36,6 +41,34 @@ const Profile = () => {
     ~ Bachelor's Degree Automation Engineering:\n
         - University of Bologna\n
         - 09/10/2018 - CURRENT\n
+    `;
+
+    const info4 = `
+---------------------Hard Skills---------------------\n
+-----------------------------------------------------\n
+    ~ 3D CAD design and modelling -> Programs:\n
+        - SolidWorks\n
+        - Creo Parametric\n
+        - AutoCAD\n
+        - Fusion360\n
+    ~ Computer's knowledge:\n
+        - Hardware\n
+        - Software\n
+        - OS -> Linux :: Windows :: macOS\n
+    ~ Programming languages -> Frontend + Backend\n
+`;
+
+    const info5 = `
+---------------------Soft Skills---------------------\n
+-----------------------------------------------------\n
+    ~ Fast learning ability\n
+    ~ Precision\n
+    ~ Problem solving\n
+    ~ Commitment to work\n
+    ~ Languages:\n
+        - English   -> B2\n
+        - Italian   -> C2\n
+        - Romanian  -> Native language\n
     `;
 
     const asciiArt = `
@@ -87,16 +120,22 @@ const Profile = () => {
     `;
 
     useEffect(() => {
+        // reset states
         setAsciiImage('');
         setInfoText1('');
         setInfoText2('');
         setInfoText3('');
+        setInfoText4('');
+        setInfoText5('');
+
         const typeAnimation = () => {
             const lines = asciiArt.split('\n');
             const linesInfo1 = info1.split('\n');
             const linesInfo2 = info2.split('\n');
             const linesInfo3 = info3.split('\n');
-            
+            const linesInfo4 = info4.split('\n');
+            const linesInfo5 = info5.split('\n');
+
             let i = 0;
             const intervalId = setInterval(() => {
                 if (i < lines.length - 1) {
@@ -119,8 +158,14 @@ const Profile = () => {
                 if (j < linesInfo3.length - 1) {
                     setInfoText3((prevInfo3) => prevInfo3 + linesInfo3[j] + '\n');
                 }
+                if (j < linesInfo4.length - 1) {
+                    setInfoText4((prevInfo4) => prevInfo4 + linesInfo4[j] + '\n');
+                }
+                if (j < linesInfo5.length - 1) {
+                    setInfoText5((prevInfo5) => prevInfo5 + linesInfo5[j] + '\n');
+                }
                 j++;
-                if (j >= info1.length) {
+                if (j >= info4.length) {
                     clearInterval(infoIntervalId);
                 }
             }, 50); // Adjust the delay as needed for line speed
@@ -131,19 +176,27 @@ const Profile = () => {
 
 
     return (
-        <div className='flex flex-col md:flex-row flex-wrap items-top' style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#d4d4d4' }}>
+        <div>
             <pre className="lg:pl-12 xl:pl-17" style={{ lineHeight: 0.5, fontSize: '0.3rem' }}>
                 {asciiImage}
             </pre>
-            <pre className="pl-0 lg:pl-12 xl:pl-17">
-                {infoText1}
-            </pre>
-            <pre className="lg:pl-12 xl:pl-17">
-                {infoText2}
-            </pre>
-            <pre className="lg:pl-12 xl:pl-17">
-                {infoText3}
-            </pre>
+            <div className='flex flex-col md:flex-row flex-wrap items-top' style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#d4d4d4' }}>
+                <pre className="pl-0 lg:pl-12 xl:pl-17">
+                    {infoText1}
+                </pre>
+                <pre className="lg:pl-12 xl:pl-17">
+                    {infoText2}
+                </pre>
+                <pre className="lg:pl-12 xl:pl-17">
+                    {infoText3}
+                </pre>
+                <pre className="lg:pl-12 xl:pl-17">
+                    {infoText4}
+                </pre>
+                <pre className="lg:pl-12 xl:pl-17">
+                    {infoText5}
+                </pre>
+            </div>
         </div>
     )
 }

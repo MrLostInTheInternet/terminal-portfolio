@@ -209,7 +209,7 @@ const FancyTerminal: React.FC = () => {
 
 
     return (
-        <div className="relative font-mono text-lg overflow-hidden whitespace-pre-line flex-1 h-full md:pl-17 text-gray-300 w-full">
+        <div className="font-mono text-lg overflow-hidden whitespace-pre-line flex-1 h-full md:pl-17 text-gray-300 w-full">
             <div className="pt-2 md:pb-1 md:pt-4 md:pl-17 overflow-y-auto">
                 {output.map((line, index) => {
                     const commandPrompt = 'visitor@eugen-portfolio:~$';
@@ -250,7 +250,7 @@ const FancyTerminal: React.FC = () => {
             </div>
             <form
                 onSubmit={handleInputSubmit}
-                className="flex-1 items-center md:pl-17 mb-40"
+                className="flex flex-1 items-center md:pl-17 mb-40"
             >
                 <span className=" text-green-500 font-bold text-sm md:text-lg pr-2">visitor@eugen-portfolio:~$</span>
                 <input
@@ -259,7 +259,7 @@ const FancyTerminal: React.FC = () => {
                     value={input}
                     onChange={handleInputChange}
                     onKeyDown={handleTabCompletion}
-                    className="flex-1 text-sm md:text-lg bg-transparent text-gray-300 outline-none caret-transparent border-none"
+                    className="flex flex-1 text-sm md:text-lg bg-transparent text-gray-300 outline-none caret-yellow-500 border-none"
                 />
                 {/* Hide the submit button */}
                 <button type="submit" className="hidden"></button>
