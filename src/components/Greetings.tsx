@@ -37,7 +37,7 @@ const Greetings: React.FC = () => {
     }, []);
 
     return (
-        <div className="font-monospace text-xl text-yellow-500 py-6 md:text-lg lg:text-xl">
+        <div className="font-monospace text-md text-yellow-500 py-6 md:text-lg lg:text-xl mx-2 md:mx-0">
             <span>
                 {initGreeting}
             </span>

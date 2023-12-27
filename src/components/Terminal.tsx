@@ -1,4 +1,3 @@
-// src/components/FancyTerminal.tsx
 import React, { useEffect, useRef, useState } from 'react';
 
 const FancyTerminal: React.FC = () => {
@@ -16,39 +15,39 @@ const FancyTerminal: React.FC = () => {
     const availableCommands = [
         {
             cmd: 'help',
-            descr: '    ~ List of available commands;'
+            descr: '\t\t\t- List of available commands;'
         },
         {
             cmd: 'whoami',
-            descr: '    ~ Shows your IP address;'
+            descr: '\t\t\t- Shows your IP address;'
         },
         {
             cmd: 'ls',
-            descr: '    ~ List of available pages on the website;'
+            descr: '\t\t\t\t- List of available pages on the website;'
         },
         {
             cmd: 'cd [page]',
-            descr: '    ~ Move to another page. Example: cd /home (moves to Homepage);'
+            descr: '\t\t- Move to another page. Example: cd /home (moves to Homepage);'
         },
         {
             cmd: 'clear',
-            descr: '    ~ Clear the terminal;'
+            descr: '\t\t\t- Clear the terminal;'
         },
         {
             cmd: 'cls',
-            descr: '    ~ Clear the terminal;'
+            descr: '\t\t\t\t- Clear the terminal;'
         },
         {
             cmd: 'hello',
-            descr: '    ~ I say hello back;'
+            descr: '\t\t\t- I say hello back;'
         },
         {
             cmd: 'exit',
-            descr: '    ~ Close the webpage;'
+            descr: '\t\t\t- Close the webpage;'
         },
         {
             cmd: 'pwd',
-            descr: '    ~ Shows the current location on the website;'
+            descr: '\t\t\t\t- Shows the current location on the website;'
         }
     ];
 
@@ -227,8 +226,10 @@ const FancyTerminal: React.FC = () => {
 
                         return (
                             <div key={index} className="mb-2 md:mb-4 text-sm md:text-lg">
-                                <span className="text-green-500 font-bold">{commandPart}</span>
-                                {responsePart}
+                                <pre>
+                                    <span className='text-yellow-500'>visitor</span>@<span className='text-green-500'>eugen-portfolio</span><span className='text-red-400'>:~</span>
+                                    ${responsePart}
+                                </pre>
                             </div>
                         );
                     }
@@ -242,12 +243,13 @@ const FancyTerminal: React.FC = () => {
                 })}
                 <div ref={inputRef}></div>
                 {isHelp && (
-                    <div>
+                    <div className='mb-2 md:mb-4 flex flex-wrap flex-col flex-1'>
                         {availableCommands.map(({ cmd, descr }) => (
-                            <div key={cmd} className="ml-2 md:ml-17">
-                                <span className="font-bold text-sm md:text-lg text-yellow-500">{cmd}</span>
-                                <br />
-                                <span className="pl-17 md:pl-17 text-sm md:text-lg">{`\u00A0\u00A0\u00A0\u00A0${descr}`}</span>
+                            <div key={cmd} className="md:ml-17">
+                                <pre>
+                                    <span className="font-bold text-sm md:text-lg text-yellow-500">{cmd}</span>
+                                    <span className="pl-17 md:pl-17 text-sm md:text-lg whitespace-pre-wrap">{descr}</span>
+                                </pre>
                             </div>
                         ))}
                     </div>
@@ -258,7 +260,8 @@ const FancyTerminal: React.FC = () => {
                 className="flex-1 items-center md:pl-17 mb-40 md:flex-row"
             >
                 <div className='flex flex-col md:flex-row'>
-                    <span className=" text-green-500 font-bold text-sm md:text-lg pr-2">visitor@eugen-portfolio:~$</span>
+                    <pre className=" text-[#d4d4d4] font-bold text-sm md:text-lg pr-2">
+                        <span className='text-yellow-500'>visitor</span>@<span className='text-green-500'>eugen-portfolio</span><span className='text-red-400'>:~</span>$</pre>
                     <div className='flex-row'>
                         <span className="md:hidden text-[#d4d4d4] font-bold text-sm md:text-lg pr-2">&gt;</span>
                         <input

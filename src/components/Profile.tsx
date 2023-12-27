@@ -17,7 +17,7 @@ const Profile = () => {
     ~ Age:          ${age} years old\n
     ~ Knowledge:    Mechanic and Junior Developer\n
     ~ Nationality:  Romanian\n
-    ~ Localion:     Bologna, Italy\n
+    ~ Location:     Bologna, Italy\n
     `;
 
     const info2 = `
@@ -149,27 +149,29 @@ const Profile = () => {
             }, 15); // Adjust the delay as needed for line speed
             
             let j = 0
-            const infoIntervalId = setInterval(() => {
-                if (j < linesInfo1.length - 1) {
-                    setInfoText1((prevInfo1) => prevInfo1 + linesInfo1[j] + '\n');
-                }
-                if (j < linesInfo2.length - 1) {
-                    setInfoText2((prevInfo2) => prevInfo2 + linesInfo2[j] + '\n');
-                }
-                if (j < linesInfo3.length - 1) {
-                    setInfoText3((prevInfo3) => prevInfo3 + linesInfo3[j] + '\n');
-                }
-                if (j < linesInfo4.length - 1) {
-                    setInfoText4((prevInfo4) => prevInfo4 + linesInfo4[j] + '\n');
-                }
-                if (j < linesInfo5.length - 1) {
-                    setInfoText5((prevInfo5) => prevInfo5 + linesInfo5[j] + '\n');
-                }
-                j++;
-                if (j >= info4.length) {
-                    clearInterval(infoIntervalId);
-                }
-            }, 50); // Adjust the delay as needed for line speed
+            setTimeout(() => {
+                const infoIntervalId = setInterval(() => {
+                    if (j < linesInfo1.length - 1) {
+                        setInfoText1((prevInfo1) => prevInfo1 + linesInfo1[j] + '\n');
+                    }
+                    if (j < linesInfo2.length - 1) {
+                        setInfoText2((prevInfo2) => prevInfo2 + linesInfo2[j] + '\n');
+                    }
+                    if (j < linesInfo3.length - 1) {
+                        setInfoText3((prevInfo3) => prevInfo3 + linesInfo3[j] + '\n');
+                    }
+                    if (j < linesInfo4.length - 1) {
+                        setInfoText4((prevInfo4) => prevInfo4 + linesInfo4[j] + '\n');
+                    }
+                    if (j < linesInfo5.length - 1) {
+                        setInfoText5((prevInfo5) => prevInfo5 + linesInfo5[j] + '\n');
+                    }
+                    j++;
+                    if (j >= info4.length) {
+                        clearInterval(infoIntervalId);
+                    }
+                }, 50); // Adjust the delay as needed for line speed
+            }, lines.length * 15)
         };
 
         typeAnimation();
@@ -177,24 +179,24 @@ const Profile = () => {
 
 
     return (
-        <div>
-            <pre className="lg:pl-12 xl:pl-17" style={{ lineHeight: 0.5, fontSize: '0.3rem' }}>
+        <div className='md:mx-2 items-center md:items-start justify-center flex flex-1 flex-col md:flex-wrap md:justify-start'>
+            <pre className="lg:pl-9 xl:pl-13 mb-5 text-blue-200" style={{ lineHeight: 0.5, fontSize: '0.3rem' }}>
                 {asciiImage}
             </pre>
-            <div className='flex flex-col md:flex-row flex-wrap items-top' style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#d4d4d4' }}>
-                <pre className="lg:pl-12 xl:pl-17">
+            <div className='flex flex-1 flex-col md:flex-row flex-wrap items-top' style={{ fontFamily: 'monospace', fontWeight: 'bold',fontSize: '0.8rem', color: '#d4d4d4' }}>
+                <pre className="lg:pl-9 xl:pl-13 ">
                     {infoText1}
                 </pre>
-                <pre className="lg:pl-12 xl:pl-17">
+                <pre className="lg:pl-9 xl:pl-13">
                     {infoText2}
                 </pre>
-                <pre className="lg:pl-12 xl:pl-17">
+                <pre className="lg:pl-9 xl:pl-13">
                     {infoText3}
                 </pre>
-                <pre className="lg:pl-12 xl:pl-17">
+                <pre className="lg:pl-9 xl:pl-13">
                     {infoText4}
                 </pre>
-                <pre className="lg:pl-12 xl:pl-17">
+                <pre className="lg:pl-9 xl:pl-13">
                     {infoText5}
                 </pre>
             </div>

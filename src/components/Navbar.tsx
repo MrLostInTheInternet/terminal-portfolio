@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -8,10 +8,10 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="flex flex-wrap justify-between items-center p-5 md:p-10 bg-transparent text-white">
+        <nav className="flex flex-wrap justify-between items-center p-3 mt-2 md:p-5 bg-transparent text-[#d4d4d4]">
             {/* Logo */}
             <a href="/" className="flex items-center">
-                <img src="/bitmap.svg" alt="Logo" className="w-20 h-20 md:w-28 md:h-28" />
+                <img src="/bitmap.svg" alt="Logo" className="md:mx-8 w-16 h-18 md:w-26 md:h-26" />
             </a>
 
             {/* Mobile Menu Toggle */}
