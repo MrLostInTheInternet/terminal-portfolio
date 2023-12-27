@@ -37,12 +37,11 @@ const Greetings: React.FC = () => {
     }, []);
 
     return (
-        <div style={{ fontFamily: 'monospace', fontSize: 20, color: '#efa667', padding: '30px', whiteSpace: 'nowrap', fontWeight: 'bold',
-        textShadow: '0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 127, 0, 0.8)'}}>
+        <div className="font-monospace text-xl text-yellow-500 px-2 py-6 md:px-16 md:text-lg lg:text-xl">
             <span>
                 {initGreeting}
             </span>
-            <span style={{color: '#448ae0', textShadow: '0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.8)'}}>
+            <span className="text-blue-500 lg:mx-3 md:mx-2">
                 {help}
             </span>
             <span>

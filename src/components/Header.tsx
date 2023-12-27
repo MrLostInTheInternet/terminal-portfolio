@@ -51,51 +51,17 @@ const AnsiText: React.FC<AnsiTextProps> = ({ message }) => {
   const htmlTextAbout = ansiTextAbout.replace(/\u001b\[(\d+)m/g, '');
   const htmlTextProjects = ansiTextProjects.replace(/\u001b\[(\d+)m/g, '');
 
-  switch (message) {
-    case 'about':
-      return (
-        <div style={{ paddingLeft: 30, textAlign: 'left', fontSize: '0.5rem'}}>
-          <pre>
-            {ansiTextAbout}
-          </pre>
-        </div>
-      )
 
-    case 'contact':
-      return (
-        <div style={{ paddingLeft: 30, textAlign: 'left', fontSize: '0.5rem' }}>
-          <pre>
-            {ansiTextContact}
-          </pre>
-        </div>
-      )
-
-    case 'home':
-      return (
-        <div style={{ paddingLeft: 30, textAlign: 'left', fontSize: '0.5rem' }}>
-          <pre>
-            {ansiTextHome}
-          </pre>
-        </div>
-      )
-    
-    case 'projects':
-      return (
-        <div style={{ paddingLeft: 30, textAlign: 'left', fontSize: '0.5rem' }}>
-          <pre>
-            {ansiTextProjects}
-          </pre>
-        </div>
-      )
-
-    default:
-      return (
-        <div style={{ paddingLeft: 30, textAlign: 'left', fontSize: '0.5rem' }}>
-          <pre>
-          </pre>
-        </div>
-      )
-  }
+  return (
+    <div className={`pl-2 md:pl-17 text-left text-xs md:text-sm`}>
+      <pre>
+        {message === 'about' && ansiTextAbout}
+        {message === 'contact' && ansiTextContact}
+        {message === 'home' && ansiTextHome}
+        {message === 'projects' && ansiTextProjects}
+      </pre>
+    </div>
+  );
 };
 
 export default AnsiText;

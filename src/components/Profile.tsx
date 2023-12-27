@@ -131,17 +131,17 @@ const Profile = () => {
 
 
     return (
-        <div className='flex md:flex-row flex-wrap items-top' style={{ fontFamily: 'monospace', fontSize: '1rem', color: '#d4d4d4' }}>
-            <pre style={{ lineHeight: 0.5, fontSize: '0.5rem' }}>
+        <div className='flex flex-col md:flex-row flex-wrap items-top' style={{ fontFamily: 'monospace', fontSize: '1rem', color: '#d4d4d4' }}>
+            <pre className="md:pl-6 lg:pl-12 xl:pl-17" style={{ lineHeight: 0.5, fontSize: '0.5rem' }}>
                 {asciiImage}
             </pre>
-            <pre>
+            <pre className="md:pl-6 lg:pl-12 xl:pl-17">
                 {infoText1}
             </pre>
-            <pre>
+            <pre className="md:pl-6 lg:pl-12 xl:pl-17">
                 {infoText2}
             </pre>
-            <pre>
+            <pre className="md:pl-6 lg:pl-12 xl:pl-17">
                 {infoText3}
             </pre>
         </div>

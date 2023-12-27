@@ -6,11 +6,11 @@ const FancyTerminal: React.FC = () => {
     const [output, setOutput] = useState<string[]>([]);
     const [input, setInput] = useState('');
     const [ipAddress, setIpAddress] = useState('');
-    
+
     const [isHelp, setIsHelp] = useState(false);
-    
+
     const inputRef = useRef<HTMLInputElement>(null);
-    
+
     const completionWords = ['home', 'contact', 'projects', 'about'];
     const availablePages = ['/home', '/about', '/contact', '/projects'];
     const availableCommands = [
@@ -51,18 +51,18 @@ const FancyTerminal: React.FC = () => {
             descr: '    ~ Shows the current location on the website;'
         }
     ];
-    
-    const scrollToBottom = () => {
+
+    const scrollToMiddle = () => {
         if (inputRef.current) {
-            inputRef.current.scrollIntoView({ behavior: 'smooth' });
+            inputRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     };
-    
+
     useEffect(() => {
         // Scroll to the bottom when output changes
-        scrollToBottom();
+        scrollToMiddle();
     }, [output]);
-    
+
     useEffect(() => {
         if (inputRef.current) {
             inputRef.current.focus();
@@ -72,7 +72,7 @@ const FancyTerminal: React.FC = () => {
             .then(data => {
                 // Assuming the data contains an 'ip' property
                 const fetchedIpAddress = data.ip;
-    
+
                 // Update the state with the fetched IP address
                 setIpAddress(fetchedIpAddress);
             })
@@ -84,14 +84,14 @@ const FancyTerminal: React.FC = () => {
     const handleTabCompletion = (event: React.KeyboardEvent<HTMLInputElement>): void => {
         if (event.key === 'Tab') {
             event.preventDefault();
-            
+
             const inputValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
-            
+
             // Check if the input starts with "cd " before tab completion
             if (inputValue.startsWith('cd ')) {
                 const partialInput = inputValue.slice(3); // Remove "cd " from the input
                 const matchingWords = completionWords.filter(word => word.startsWith(partialInput));
-                
+
                 if (matchingWords.length > 0) {
                     const completion = matchingWords[0].slice(partialInput.length);
                     (event.target as HTMLInputElement).value = 'cd ' + partialInput + completion;
@@ -120,7 +120,7 @@ const FancyTerminal: React.FC = () => {
         setInput('');
 
         // Scroll to the bottom when output changes
-        scrollToBottom();
+        scrollToMiddle();
     };
 
     const handleCommand = (command: string): string => {
@@ -209,16 +209,8 @@ const FancyTerminal: React.FC = () => {
 
 
     return (
-        <div style={{ fontFamily: 'monospace', fontSize: 20, overflow: 'hidden', whiteSpace: 'pre-line', flex: 1 }}>
-            <div
-                style={{
-                    paddingTop: 2,
-                    paddingLeft: 30,
-                    overflowY: 'auto',
-                    backgroundColor: '#1e1e1e',
-                    color: '#d4d4d4',
-                }}
-            >
+        <div className="relative font-mono text-lg overflow-hidden whitespace-pre-line flex-1 h-full md:pl-17 text-gray-300 w-full">
+            <div className="pt-2 pb-4 md:pb-1 md:pt-4 md:pl-17 overflow-y-auto">
                 {output.map((line, index) => {
                     const commandPrompt = 'visitor@eugen-portfolio:~$';
                     const commandLength = commandPrompt.length;
@@ -229,8 +221,8 @@ const FancyTerminal: React.FC = () => {
                         const responsePart = line.slice(commandLength);
 
                         return (
-                            <div key={index} style={{ marginBottom: '10px' }}>
-                                <span style={{ color: '#98c379', fontWeight: 'bold' }}>{commandPart}</span>
+                            <div key={index} className="mb-2 md:mb-4 md:text-lg">
+                                <span className="text-green-500 font-bold">{commandPart}</span>
                                 {responsePart}
                             </div>
                         );
@@ -238,24 +230,19 @@ const FancyTerminal: React.FC = () => {
 
                     // If the line doesn't start with the command prompt, render it as is
                     return (
-                        <div key={index} style={{ marginBottom: '10px', color: '#d4d4d4' }}>
+                        <div key={index} className="mb-2 md:mb-4 text-gray-300 md:text-lg">
                             {line}
                         </div>
                     );
                 })}
-                <div ref={inputRef}>
-                </div>
+                <div ref={inputRef}></div>
                 {isHelp && (
                     <div>
                         {availableCommands.map(({ cmd, descr }) => (
-                            <div key={cmd}>
-                                <span style={{
-                                    fontWeight: 'bold',
-                                    textShadow: '0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 127, 0, 0.8)',
-                                    color: '#efa667'
-                                }}>{cmd}</span>
+                            <div key={cmd} className="ml-2 md:ml-17">
+                                <span className="font-bold text-lg text-yellow-500">{cmd}</span>
                                 <br />
-                                <span>{`\u00A0\u00A0\u00A0\u00A0${descr}`}</span>
+                                <span className="pl-17 md:pl-17 text-lg">{`\u00A0\u00A0\u00A0\u00A0${descr}`}</span>
                             </div>
                         ))}
                     </div>
@@ -263,37 +250,19 @@ const FancyTerminal: React.FC = () => {
             </div>
             <form
                 onSubmit={handleInputSubmit}
-                style={{
-                    display: 'flex',
-                    paddingLeft: 30,
-                    alignItems: 'center',
-                    backgroundColor: '#1e1e1e',
-                    caretColor: 'transparent',
-                    boxShadow: 'none'
-                }}
+                className="flex-1 items-center md:pl-17"
             >
-                <span style={{ marginRight: '6px', color: '#98c379', fontWeight: 'bold' }}>visitor@eugen-portfolio:~$</span>
+                <span className=" text-green-500 font-bold text-lg">visitor@eugen-portfolio:~$</span>
                 <input
                     ref={inputRef}
                     type="text"
                     value={input}
                     onChange={handleInputChange}
                     onKeyDown={handleTabCompletion}
-                    style={{
-                        flex: 1,
-                        padding: '6px',
-                        fontSize: 20,
-                        fontFamily: 'monospace',
-                        backgroundColor:
-                            '#1e1e1e',
-                        color: '#d4d4d4',
-                        outline: 'none',
-                        caretColor: 'transparent',
-                        border: 'none'
-                    }}
+                    className="flex-1 text-lg bg-transparent text-gray-300 outline-none caret-transparent border-none"
                 />
                 {/* Hide the submit button */}
-                <button type="submit" style={{ display: 'none' }}></button>
+                <button type="submit" className="hidden"></button>
             </form>
         </div>
     );

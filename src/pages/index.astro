@@ -9,17 +9,17 @@ import FancyTerminal from '../components/Terminal';
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/bitmap.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
 	<body class="fade">
-		<Navbar/>
+		<Navbar client:load/>
 		<div class="mt-10">
             <AnsiText message='home'/>
         </div>
-		<div class="flex flex-col flex-1">
+		<div class="flex flex-col flex-1 px-4 md:px-10">
 			<Greetings client:visible/>
 			<FancyTerminal client:only/>
 		</div>
