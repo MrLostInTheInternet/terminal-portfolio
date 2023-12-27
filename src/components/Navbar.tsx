@@ -11,7 +11,7 @@ const Navbar = () => {
         <nav className="flex flex-wrap justify-between items-center p-5 md:p-10 bg-transparent text-white">
             {/* Logo */}
             <a href="/" className="flex items-center">
-                <img src="/bitmap.svg" alt="Logo" className="w-20 h-20 md:w-32 md:h-32" />
+                <img src="/bitmap.svg" alt="Logo" className="w-20 h-20 md:w-28 md:h-28" />
             </a>
 
             {/* Mobile Menu Toggle */}
@@ -37,29 +37,29 @@ const Navbar = () => {
             {/* Navigation links */}
             <div
                 className={`${isMobileMenuOpen ? 'block' : 'hidden'
-                    } md:flex flex-col md:flex-row mt-2 md:mt-0 md:mx-5`}
+                    } md:flex flex-col md:flex-row mt-2 md:mt-0 md:mx-3`}
             >
                 <a
                     href="/"
-                    className="font-bold text-lg md:text-xl mx-5 text-[#d4d4d4] cursor-pointer transition duration-300 hover:text-[#efa667] mb-2 md:mb-0"
+                    className="font-bold text-md md:text-lg mx-4 text-[#d4d4d4] cursor-pointer transition duration-300 hover:text-[#efa667] mb-2 md:mb-0"
                 >
                     Home
                 </a>
                 <a
                     href="/projects"
-                    className="font-bold text-lg md:text-xl mx-5 text-[#d4d4d4] cursor-pointer transition duration-300 hover:text-[#efa667] mb-2 md:mb-0"
+                    className="font-bold text-md md:text-lg mx-4 text-[#d4d4d4] cursor-pointer transition duration-300 hover:text-[#efa667] mb-2 md:mb-0"
                 >
                     Projects
                 </a>
                 <a
                     href="/about"
-                    className="font-bold text-lg md:text-xl mx-5 text-[#d4d4d4] cursor-pointer transition duration-300 hover:text-[#efa667] mb-2 md:mb-0"
+                    className="font-bold text-md md:text-lg mx-4 text-[#d4d4d4] cursor-pointer transition duration-300 hover:text-[#efa667] mb-2 md:mb-0"
                 >
                     About
                 </a>
                 <a
                     href="/contact"
-                    className="font-bold text-lg md:text-xl mx-5 text-[#d4d4d4] cursor-pointer transition duration-300 hover:text-[#efa667] mb-2 md:mb-0"
+                    className="font-bold text-md md:text-lg mx-4 text-[#d4d4d4] cursor-pointer transition duration-300 hover:text-[#efa667] mb-2 md:mb-0"
                 >
                     Contact
                 </a>

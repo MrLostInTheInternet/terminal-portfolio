@@ -11,8 +11,8 @@ const Profile = () => {
 
     const age = new Date().getFullYear() - 1999;
     const info1 = `
-----------------Personal Informations----------------\n
------------------------------------------------------\n
+-------------Personal Informations----------------\n
+--------------------------------------------------\n
     ~ Name:         Eugen Iofciu Vasile\n
     ~ Age:          ${age} years old\n
     ~ Knowledge:    Mechanic and Junior Developer\n
@@ -21,8 +21,8 @@ const Profile = () => {
     `;
 
     const info2 = `
-----------------Programming Languages----------------\n
------------------------------------------------------\n
+---------------Programming Languages--------------\n
+--------------------------------------------------\n
     ~ Frontend:\n
         - HTML, CSS, JS, TS\n
         - ReactJS, React Native\n
@@ -33,8 +33,8 @@ const Profile = () => {
     `;
 
     const info3 = `
-----------------------Education----------------------\n
------------------------------------------------------\n
+--------------------Education--------------------\n
+-------------------------------------------------\n
     ~ Diploma:\n
         - ITIS Belluzzi-Fioravanti\n
         - 18/09/2018 - 05/07/2018\n
@@ -44,8 +44,8 @@ const Profile = () => {
     `;
 
     const info4 = `
----------------------Hard Skills---------------------\n
------------------------------------------------------\n
+-------------------Hard Skills-------------------\n
+-------------------------------------------------\n
     ~ 3D CAD design and modelling -> Programs:\n
         - SolidWorks\n
         - Creo Parametric\n
@@ -59,8 +59,8 @@ const Profile = () => {
 `;
 
     const info5 = `
----------------------Soft Skills---------------------\n
------------------------------------------------------\n
+-------------------Soft Skills-------------------\n
+-------------------------------------------------\n
     ~ Fast learning ability\n
     ~ Precision\n
     ~ Problem solving\n
@@ -181,7 +181,7 @@ const Profile = () => {
                 {asciiImage}
             </pre>
             <div className='flex flex-col md:flex-row flex-wrap items-top' style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#d4d4d4' }}>
-                <pre className="pl-0 lg:pl-12 xl:pl-17">
+                <pre className="lg:pl-12 xl:pl-17">
                     {infoText1}
                 </pre>
                 <pre className="lg:pl-12 xl:pl-17">
