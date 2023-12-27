@@ -55,7 +55,8 @@ const Profile = () => {
         - Hardware\n
         - Software\n
         - OS -> Linux :: Windows :: macOS\n
-    ~ Programming languages -> Frontend + Backend\n
+    ~ Programming languages:\n
+        - Frontend + Backend\n
 `;
 
     const info5 = `

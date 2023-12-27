@@ -207,9 +207,14 @@ const FancyTerminal: React.FC = () => {
 
     };
 
+    const handleTerminalClick = () => {
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    };
 
     return (
-        <div className="font-mono text-lg overflow-hidden whitespace-pre-line flex-1 h-full md:pl-17 text-gray-300 w-full">
+        <div onClick={handleTerminalClick} className="font-mono text-lg overflow-hidden whitespace-pre-line flex-1 h-full md:pl-17 text-gray-300 w-full">
             <div className="pt-2 md:pb-1 md:pt-4 md:pl-17 overflow-y-auto">
                 {output.map((line, index) => {
                     const commandPrompt = 'visitor@eugen-portfolio:~$';
@@ -250,19 +255,24 @@ const FancyTerminal: React.FC = () => {
             </div>
             <form
                 onSubmit={handleInputSubmit}
-                className="flex-1 items-center md:pl-17 mb-40"
+                className="flex-1 items-center md:pl-17 mb-40 md:flex-row"
             >
-                <span className=" text-green-500 font-bold text-sm md:text-lg pr-2">visitor@eugen-portfolio:~$</span>
-                <input
-                    ref={inputRef}
-                    type="text"
-                    value={input}
-                    onChange={handleInputChange}
-                    onKeyDown={handleTabCompletion}
-                    className="flex-1 text-sm md:text-lg bg-transparent text-gray-300 outline-none caret-yellow-500 border-none"
-                />
-                {/* Hide the submit button */}
-                <button type="submit" className="hidden"></button>
+                <div className='flex flex-col md:flex-row'>
+                    <span className=" text-green-500 font-bold text-sm md:text-lg pr-2">visitor@eugen-portfolio:~$</span>
+                    <div className='flex-row'>
+                        <span className="md:hidden text-[#d4d4d4] font-bold text-sm md:text-lg pr-2">&gt;</span>
+                        <input
+                            ref={inputRef}
+                            type="text"
+                            value={input}
+                            onChange={handleInputChange}
+                            onKeyDown={handleTabCompletion}
+                            className="flex-1 text-sm md:text-lg bg-transparent text-gray-300 outline-none caret-yellow-500 border-none"
+                        />
+                        {/* Hide the submit button */}
+                        <button type="submit" className="hidden"></button>
+                    </div>
+                </div>
             </form>
         </div>
     );
