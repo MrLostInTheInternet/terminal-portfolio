@@ -20,10 +20,10 @@ import FancyTerminal from '../components/Terminal';
             <AnsiText message='projects'/>
         </div>
         <div class="flex flex-row flex-wrap justify-center">
-            <ProjectWindow title='FluidPyPLC'/>
-            <ProjectWindow title='Mountain First Aid'/>
-            <ProjectWindow title='My Portfolio'/>
-            <ProjectWindow title='E-commerce Angular + Spring Boot'/>
+            <ProjectWindow client:load title='FluidPyPLC' repoName='FluidPyPLC' repoOwner='MrLostInTheInternet'/>
+            <ProjectWindow client:load title='Mountain First Aid' repoName='first-aid-mountain' repoOwner='MrLostInTheInternet'/>
+            <ProjectWindow client:load title='My Portfolio' repoName='terminal-portfolio' repoOwner='MrLostInTheInternet'/>
+            <ProjectWindow client:load title='E-commerce Angular + Spring Boot' repoName='spring-boot-ecommerce' repoOwner='MrLostInTheInternet'/>
         </div>
 		<div class="flex flex-col flex-1 px-4 md:px-10">
             <FancyTerminal client:only/>

@@ -8,34 +8,34 @@ const Profile = () => {
     const [infoText3, setInfoText3] = useState<string>('');
     const age = new Date().getFullYear() - 1999;
     const info1 = `
-    ----------------Personal Informations----------------\n
-    -----------------------------------------------------\n
-        ~ Name:         Eugen Iofciu Vasile\n
-        ~ Age:          ${age} years old\n
-        ~ Knowledge:    Mechanic and Junior Developer\n
+----------------Personal Informations----------------\n
+-----------------------------------------------------\n
+    ~ Name:         Eugen Iofciu Vasile\n
+    ~ Age:          ${age} years old\n
+    ~ Knowledge:    Mechanic and Junior Developer\n
     `;
 
     const info2 = `
-    ----------------Programming Languages----------------\n
-    -----------------------------------------------------\n
-        ~ Frontend:\n
-            - HTML, CSS, JS, TS\n
-            - ReactJS, React Native\n
-            - (learning) AstroJS, Angular\n
-        ~ Backend:\n
-            - Python, Java, C++\n
-            - NodeJS, Spring Boot, Express\n
+----------------Programming Languages----------------\n
+-----------------------------------------------------\n
+    ~ Frontend:\n
+        - HTML, CSS, JS, TS\n
+        - ReactJS, React Native\n
+        - (learning) AstroJS, Angular\n
+    ~ Backend:\n
+        - Python, Java, C++\n
+        - NodeJS, Spring Boot, Express\n
     `;
 
     const info3 = `
-    ----------------------Education----------------------\n
-    -----------------------------------------------------\n
-        ~ Diploma:\n
-            - ITIS Belluzzi-Fioravanti\n
-            - 18/09/2018 - 05/07/2018\n
-        ~ Bachelor's Degree Automation Engineering:\n
-            - University of Bologna\n
-            - 09/10/2018 - CURRENT\n
+----------------------Education----------------------\n
+-----------------------------------------------------\n
+    ~ Diploma:\n
+        - ITIS Belluzzi-Fioravanti\n
+        - 18/09/2018 - 05/07/2018\n
+    ~ Bachelor's Degree Automation Engineering:\n
+        - University of Bologna\n
+        - 09/10/2018 - CURRENT\n
     `;
 
     const asciiArt = `
@@ -131,17 +131,17 @@ const Profile = () => {
 
 
     return (
-        <div className='flex flex-col md:flex-row flex-wrap items-top' style={{ fontFamily: 'monospace', fontSize: '1rem', color: '#d4d4d4' }}>
-            <pre className="md:pl-6 lg:pl-12 xl:pl-17" style={{ lineHeight: 0.5, fontSize: '0.5rem' }}>
+        <div className='flex flex-col md:flex-row flex-wrap items-top' style={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#d4d4d4' }}>
+            <pre className="lg:pl-12 xl:pl-17" style={{ lineHeight: 0.5, fontSize: '0.3rem' }}>
                 {asciiImage}
             </pre>
-            <pre className="md:pl-6 lg:pl-12 xl:pl-17">
+            <pre className="pl-0 lg:pl-12 xl:pl-17">
                 {infoText1}
             </pre>
-            <pre className="md:pl-6 lg:pl-12 xl:pl-17">
+            <pre className="lg:pl-12 xl:pl-17">
                 {infoText2}
             </pre>
-            <pre className="md:pl-6 lg:pl-12 xl:pl-17">
+            <pre className="lg:pl-12 xl:pl-17">
                 {infoText3}
             </pre>
         </div>

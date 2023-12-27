@@ -4,7 +4,7 @@ const Greetings: React.FC = () => {
     const [initGreeting, setInitGreeting] = useState<string>('');
     const [help, setHelp] = useState<string>('');
     const [endGreeting, setEndGreeting] = useState<string>('');
-    const initGreetingsText = '>>> Welcome to My Portfolio! Use ';
+    const initGreetingsText = '>>> Welcome to my Portfolio! Use ';
     const helpText = 'help';
     const endGreetingsText = ' to list all the available commands.'
 
@@ -37,11 +37,11 @@ const Greetings: React.FC = () => {
     }, []);
 
     return (
-        <div className="font-monospace text-xl text-yellow-500 px-2 py-6 md:px-16 md:text-lg lg:text-xl">
+        <div className="font-monospace text-xl text-yellow-500 py-6 md:pl-2 md:text-lg lg:text-xl">
             <span>
                 {initGreeting}
             </span>
-            <span className="text-blue-500 lg:mx-3 md:mx-2">
+            <span className="text-blue-500">
                 {help}
             </span>
             <span>

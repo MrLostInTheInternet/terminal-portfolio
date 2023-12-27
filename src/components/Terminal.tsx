@@ -210,7 +210,7 @@ const FancyTerminal: React.FC = () => {
 
     return (
         <div className="relative font-mono text-lg overflow-hidden whitespace-pre-line flex-1 h-full md:pl-17 text-gray-300 w-full">
-            <div className="pt-2 pb-4 md:pb-1 md:pt-4 md:pl-17 overflow-y-auto">
+            <div className="pt-2 md:pb-1 md:pt-4 md:pl-17 overflow-y-auto">
                 {output.map((line, index) => {
                     const commandPrompt = 'visitor@eugen-portfolio:~$';
                     const commandLength = commandPrompt.length;
@@ -221,7 +221,7 @@ const FancyTerminal: React.FC = () => {
                         const responsePart = line.slice(commandLength);
 
                         return (
-                            <div key={index} className="mb-2 md:mb-4 md:text-lg">
+                            <div key={index} className="mb-2 md:mb-4 text-sm md:text-lg">
                                 <span className="text-green-500 font-bold">{commandPart}</span>
                                 {responsePart}
                             </div>
@@ -230,7 +230,7 @@ const FancyTerminal: React.FC = () => {
 
                     // If the line doesn't start with the command prompt, render it as is
                     return (
-                        <div key={index} className="mb-2 md:mb-4 text-gray-300 md:text-lg">
+                        <div key={index} className="mb-2 md:mb-4 text-gray-300 text-sm md:text-lg">
                             {line}
                         </div>
                     );
@@ -240,9 +240,9 @@ const FancyTerminal: React.FC = () => {
                     <div>
                         {availableCommands.map(({ cmd, descr }) => (
                             <div key={cmd} className="ml-2 md:ml-17">
-                                <span className="font-bold text-lg text-yellow-500">{cmd}</span>
+                                <span className="font-bold text-sm md:text-lg text-yellow-500">{cmd}</span>
                                 <br />
-                                <span className="pl-17 md:pl-17 text-lg">{`\u00A0\u00A0\u00A0\u00A0${descr}`}</span>
+                                <span className="pl-17 md:pl-17 text-sm md:text-lg">{`\u00A0\u00A0\u00A0\u00A0${descr}`}</span>
                             </div>
                         ))}
                     </div>
@@ -250,16 +250,16 @@ const FancyTerminal: React.FC = () => {
             </div>
             <form
                 onSubmit={handleInputSubmit}
-                className="flex-1 items-center md:pl-17"
+                className="flex-1 items-center md:pl-17 mb-40"
             >
-                <span className=" text-green-500 font-bold text-lg">visitor@eugen-portfolio:~$</span>
+                <span className=" text-green-500 font-bold text-sm md:text-lg pr-2">visitor@eugen-portfolio:~$</span>
                 <input
                     ref={inputRef}
                     type="text"
                     value={input}
                     onChange={handleInputChange}
                     onKeyDown={handleTabCompletion}
-                    className="flex-1 text-lg bg-transparent text-gray-300 outline-none caret-transparent border-none"
+                    className="flex-1 text-sm md:text-lg bg-transparent text-gray-300 outline-none caret-transparent border-none"
                 />
                 {/* Hide the submit button */}
                 <button type="submit" className="hidden"></button>
