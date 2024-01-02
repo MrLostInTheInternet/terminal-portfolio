@@ -1,18 +1,8 @@
 ---
 import ContactInfo from '../components/ContactInfo';
-import AnsiText from '../components/Header';
-import Navbar from '../components/Navbar';
-import FancyTerminal from '../components/Terminal';
 import Terminal from '../layouts/terminal.astro';
 ---
 
-<Terminal title="Contact me - EuzDev">
-	<Navbar client:load/>
-	<div class="mt-3">
-		<AnsiText message='contact'/>
-		<ContactInfo client:load/>
-	</div>
-	<div class="flex flex-col flex-1 px-2 md:px-10">
-		<FancyTerminal client:only/>
-	</div>
+<Terminal title="Contact me - EuzDev" ansii="contact">
+	<ContactInfo client:load/>
 </Terminal>

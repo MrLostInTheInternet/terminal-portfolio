@@ -1,23 +1,13 @@
 ---
-import AnsiText from '../components/Header';
-import Navbar from '../components/Navbar';
 import ProjectWindow from '../components/ProjectWindow';
-import FancyTerminal from '../components/Terminal';
 import Terminal from '../layouts/terminal.astro';
 ---
 
-<Terminal title="Projects - EuzDev">
-	<Navbar client:load/>
-	<div class="mt-3">
-		<AnsiText message='projects'/>
-	</div>
+<Terminal title="Projects - EuzDev" ansii="projects">
 	<div class="flex flex-row flex-wrap justify-center">
 		<ProjectWindow client:load title='FluidPyPLC' repoName='FluidPyPLC' repoOwner='MrLostInTheInternet'/>
 		<ProjectWindow client:load title='Mountain First Aid' repoName='first-aid-mountain' repoOwner='MrLostInTheInternet'/>
 		<ProjectWindow client:load title='My Portfolio' repoName='terminal-portfolio' repoOwner='MrLostInTheInternet'/>
 		<ProjectWindow client:load title='E-commerce Angular + Spring Boot' repoName='spring-boot-ecommerce' repoOwner='MrLostInTheInternet'/>
-	</div>
-	<div class="flex flex-col flex-1 px-1 md:px-12">
-		<FancyTerminal client:only/>
 	</div>
 </Terminal>
