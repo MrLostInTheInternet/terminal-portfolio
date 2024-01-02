@@ -9,6 +9,7 @@ export default defineConfig({
     integrations: [react(), tailwind()],
     pages: {
         // Configure options for the about.astro page
+        'index.astro': {},
         'about.astro': {},
         'contact.astro': {},
         'projects.astro': {}

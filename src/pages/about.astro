@@ -1,9 +1,11 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import Profile from '../components/Profile';
 import Terminal from '../layouts/terminal.astro';
 ---
 
 <Terminal title="About me - EuzDev" ansii="about">
+	<ViewTransitions/>
 	<div class="flex flex-1 px-1">
 		<Profile client:only/>
 	</div>

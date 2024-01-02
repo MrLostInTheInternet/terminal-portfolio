@@ -1,9 +1,11 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import ProjectWindow from '../components/ProjectWindow';
 import Terminal from '../layouts/terminal.astro';
 ---
 
 <Terminal title="Projects - EuzDev" ansii="projects">
+	<ViewTransitions/>
 	<div class="flex flex-row flex-wrap justify-center">
 		<ProjectWindow client:load title='FluidPyPLC' repoName='FluidPyPLC' repoOwner='MrLostInTheInternet'/>
 		<ProjectWindow client:load title='Mountain First Aid' repoName='first-aid-mountain' repoOwner='MrLostInTheInternet'/>

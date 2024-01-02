@@ -1,5 +1,5 @@
 import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faMailForward, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faMailForward } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 
@@ -21,7 +21,7 @@ const ContactInfo = () => {
     const body = 'I would like to get in touch with you. My name is ';
 
     const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
+
     useEffect(() => {
         const typeAnimation = () => {
             for (let i = 0; i <= l1.length; i++) {
@@ -58,28 +58,28 @@ const ContactInfo = () => {
                     <FontAwesomeIcon icon={faArrowDown} className='w-5' />
                 </div>
                 <br />
-                <div>
+                <div className='flex-row'>
                     <pre>
                         <li className='cursor-pointer transition duration-300 hover:text-[#efa667]'>
-                            <FontAwesomeIcon icon={faLinkedin} className='mr-5 w-5'/>
-                            <a  href="https://www.linkedin.com/in/eugen-iofciu-vasile-17a899196">{link1}</a>
+                            <FontAwesomeIcon icon={faLinkedin} className='mr-5 w-5' />
+                            <a href="https://www.linkedin.com/in/eugen-iofciu-vasile-17a899196">{link1}</a>
                         </li>
                     </pre>
                     <pre>
                         <li className='cursor-pointer transition duration-300 hover:text-[#efa667]'>
-                            <FontAwesomeIcon icon={faGithub} className='mr-5 w-5'/>
+                            <FontAwesomeIcon icon={faGithub} className='mr-5 w-5' />
                             <a href="https://www.github.com/MrLostInTheInternet/">{link2}</a>
                         </li>
                     </pre>
                     <pre>
                         <li className='cursor-pointer transition duration-300 hover:text-[#efa667]'>
-                            <FontAwesomeIcon icon={faInstagram} className='mr-5 w-5'/>
+                            <FontAwesomeIcon icon={faInstagram} className='mr-5 w-5' />
                             <a href="https://www.instagram.com/mr_euz">{link3}</a>
                         </li>
                     </pre>
                     <pre>
                         <li className='cursor-pointer transition duration-300 hover:text-[#efa667]'>
-                            <FontAwesomeIcon icon={faMailForward} className='mr-5 w-5'/>
+                            <FontAwesomeIcon icon={faMailForward} className='mr-5 w-5' />
                             <a href={mailtoLink}>{email}</a>
                         </li>
                     </pre>

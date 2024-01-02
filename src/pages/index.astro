@@ -1,8 +1,10 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import Greetings from '../components/Greetings';
 import Terminal from '../layouts/terminal.astro';
 ---
 
 <Terminal title="Home - EuzDev" ansii="home">
-	<Greetings client:visible/>
+	<ViewTransitions/>
+	<Greetings client:load/>
 </Terminal>

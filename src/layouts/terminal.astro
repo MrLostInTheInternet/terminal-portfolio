@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/Footer.astro';
 import AnsiText from '../components/Header';
 import Navbar from '../components/Navbar';
@@ -14,7 +13,6 @@ const {title, ansii} = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ViewTransitions/>
 	</head>
 	<body class="fade">
 		<Navbar client:load/>

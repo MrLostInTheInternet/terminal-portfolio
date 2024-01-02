@@ -128,33 +128,33 @@ const FancyTerminal: React.FC = () => {
 
         if (command.toLowerCase().includes('cd')) {
             const navCommand: string = command.substring(3);
-            switch (navCommand) {
+            switch (navCommand.trim()) {
                 case '/home':
-                    window.location.href = '/'
+                    window.location.href = '/';
                     return '';
                 case '/about':
                     window.location.href = `/about`;
                     return '';
                 case '/projects':
-                    window.location.href = '/projects'
+                    window.location.href = '/projects';
                     return '';
                 case '/contact':
-                    window.location.href = '/contact'
+                    window.location.href = '/contact';
                     return '';
                 case 'home':
-                    window.location.href = '/'
+                    window.location.href = '/';
                     return '';
                 case 'about':
                     window.location.href = `/about`;
                     return '';
                 case 'projects':
-                    window.location.href = '/projects'
+                    window.location.href = '/projects';
                     return '';
                 case 'contact':
-                    window.location.href = '/contact'
+                    window.location.href = '/contact';
                     return '';
                 case '':
-                    window.location.href = '/'
+                    window.location.href = '/';
                     return '';
                 default:
                     return `Command "${command}" not found`;
