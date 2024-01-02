@@ -1,0 +1,34 @@
+---
+import Footer from '../components/Footer.astro';
+const {title} = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/bitmap.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="fade">
+		<slot/>
+	</body>
+	<Footer/>
+</html>
+
+<style>
+	h1 {
+		padding-left: 10px;
+	}
+	body {
+		background-color: #1e1e1e; /* Set the background color to match the terminal */
+		color: #d4d4d4; /* Set the text color */
+		font-family: monospace; /* Set the font family to monospace */
+		user-select: none;
+	}
+	.fade-enter, .fade-leave-to {
+		opacity: 0;
+		transition: opacity 0.9s ease-in-out;
+	}
+</style>

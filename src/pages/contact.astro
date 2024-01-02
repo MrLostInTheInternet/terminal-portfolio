@@ -1,44 +1,18 @@
 ---
 import ContactInfo from '../components/ContactInfo';
-import Footer from '../components/Footer.astro';
 import AnsiText from '../components/Header';
 import Navbar from '../components/Navbar';
 import FancyTerminal from '../components/Terminal';
+import Terminal from '../layouts/terminal.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/bitmap.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro - Contact</title>
-	</head>
-	<body class="fade">
-        <Navbar client:load/>
-		<div class="mt-3">
-            <AnsiText message='contact'/>
-			<ContactInfo client:load/>
-        </div>
-		<div class="flex flex-col flex-1 px-2 md:px-10">
-            <FancyTerminal client:only/>
-		</div>
-	</body>
-	<Footer/>
-</html>
-
-<style>
-	h1 {
-		padding-left: 10px;
-	}
-	body {
-		background-color: #1e1e1e; /* Set the background color to match the terminal */
-		color: #d4d4d4; /* Set the text color */
-		font-family: monospace; /* Set the font family to monospace */
-		user-select: none;
-	}
-    .fade-enter, .fade-leave-to {
-		opacity: 0;
-		transition: opacity 0.9s ease-in-out;
-	}
-</style>
+<Terminal title="Contact me - EuzDev">
+	<Navbar client:load/>
+	<div class="mt-3">
+		<AnsiText message='contact'/>
+		<ContactInfo client:load/>
+	</div>
+	<div class="flex flex-col flex-1 px-2 md:px-10">
+		<FancyTerminal client:only/>
+	</div>
+</Terminal>
