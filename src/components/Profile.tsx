@@ -37,7 +37,7 @@ const Profile = () => {
 -------------------------------------------------\n
     ~ Diploma:\n
         - ITIS Belluzzi-Fioravanti\n
-        - 18/09/2018 - 05/07/2018\n
+        - 18/09/2013 - 05/07/2018\n
     ~ Bachelor's Degree Automation Engineering:\n
         - University of Bologna\n
         - 09/10/2018 - CURRENT\n
