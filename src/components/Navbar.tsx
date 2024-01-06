@@ -16,8 +16,9 @@ const Navbar = () => {
 
             {/* Mobile Menu Toggle */}
             <div className="md:hidden">
-                <button onClick={toggleMobileMenu} className="text-white">
+                <button onClick={toggleMobileMenu} className="text-white" name='logo-btn'>
                     <svg
+                        aria-label='logo'
                         className="w-6 h-6"
                         fill="none"
                         stroke="currentColor"
@@ -55,13 +56,13 @@ const Navbar = () => {
                     href="/about"
                     className="font-bold text-md md:text-lg mx-4 text-[#d4d4d4] cursor-pointer transition duration-300 hover:text-[#efa667] mb-2 md:mb-0"
                 >
-                    About
+                    About Me
                 </a>
                 <a
                     href="/contact"
                     className="font-bold text-md md:text-lg mx-4 text-[#d4d4d4] cursor-pointer transition duration-300 hover:text-[#efa667] mb-2 md:mb-0"
                 >
-                    Contact
+                    Contact Me
                 </a>
                 {/* Add more pages as needed */}
             </div>

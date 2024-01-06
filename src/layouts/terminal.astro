@@ -4,10 +4,24 @@ import AnsiText from '../components/Header';
 import Navbar from '../components/Navbar';
 import FancyTerminal from '../components/Terminal';
 const {title, ansii} = Astro.props;
+
+import { SEO } from 'astro-seo';
 ---
 
 <html lang="en">
 	<head>
+		<SEO
+			title="Terminal Portfolio"
+			description="Eugen Iofciu Vasile's terminal portfolio,
+			a basic portfolio with some features to showcase my work as a Junior Web Developer."
+			openGraph={{
+				basic: {
+				title: "Terminal based Portfolio, author: Eugen Iofciu Vasile",
+				type: "Portfolio",
+				image: "https://contrib.rocks/image?repo=MrLostInTheInternet/terminal-portfolio",
+				}
+			}}
+		/>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/bitmap.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
