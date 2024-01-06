@@ -9,7 +9,12 @@ const Profile = () => {
     const [infoText4, setInfoText4] = useState<string>('');
     const [infoText5, setInfoText5] = useState<string>('');
 
-    const age = new Date().getFullYear() - 1999;
+    let age = new Date().getFullYear() - 1999;
+    if(new Date().getMonth() <= 8) {
+        age -= 1;
+    } else {
+        age = age;
+    }
     const info1 = `
 -------------Personal Informations----------------\n
 --------------------------------------------------\n
