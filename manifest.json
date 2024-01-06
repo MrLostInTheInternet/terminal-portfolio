@@ -1,0 +1,15 @@
+{
+    "name": "Terminal Portfolio",
+    "short_name": "Portfolio",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#00aabb",
+    "icons": [
+        {
+            "src": "/bitmap.svg",
+            "sizes": "192x192",
+            "type": "svg"
+        }
+    ]
+}
