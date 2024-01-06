@@ -1,19 +1,23 @@
 ---
+import { SEO } from 'astro-seo';
 import Footer from '../components/Footer.astro';
 import AnsiText from '../components/Header';
 import Navbar from '../components/Navbar';
 import FancyTerminal from '../components/Terminal';
 const {title, ansii} = Astro.props;
 
-import { SEO } from 'astro-seo';
 ---
 
 <html lang="en">
 	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/bitmap.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
 		<SEO
 			title="Terminal Portfolio"
-			description="Eugen Iofciu Vasile's terminal portfolio,
-			a basic portfolio with some features to showcase my work as a Junior Web Developer."
+			description={`Eugen Iofciu Vasile's terminal portfolio,
+			a basic portfolio with some features to showcase my work as a Junior Web Developer.`}
 			openGraph={{
 				basic: {
 				title: "Terminal based Portfolio, author: Eugen Iofciu Vasile",
@@ -22,10 +26,6 @@ import { SEO } from 'astro-seo';
 				}
 			}}
 		/>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/bitmap.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body class="fade">
