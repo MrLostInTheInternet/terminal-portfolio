@@ -258,15 +258,17 @@ const FancyTerminal: React.FC = () => {
                 )}
             </div>
             <form
+                aria-label='form-react'
                 onSubmit={handleInputSubmit}
                 className="flex-1 items-center md:pl-17 mb-40 md:flex-row"
             >
-                <div className='flex flex-col md:flex-row'>
+                <div aria-label='terminal-div' className='flex flex-col md:flex-row'>
                     <pre className=" text-[#d4d4d4] font-bold text-sm md:text-lg pr-2">
                         <span className='text-yellow-500'>visitor</span>@<span className='text-green-500'>eugen-portfolio</span><span className='text-red-500'>:~</span>$</pre>
                     <div className='flex-row'>
                         <span className="md:hidden text-[#d4d4d4] font-bold text-sm md:text-lg pr-2">&gt;</span>
                         <input
+                            aria-label='terminal-input'
                             ref={inputRef}
                             type="text"
                             value={input}
@@ -275,7 +277,7 @@ const FancyTerminal: React.FC = () => {
                             className="flex-1 text-sm md:text-lg bg-transparent text-gray-300 outline-none caret-yellow-500 border-none"
                         />
                         {/* Hide the submit button */}
-                        <button type="submit" className="hidden"></button>
+                        <button type="submit" className="hidden" aria-label='submit-btn'></button>
                     </div>
                 </div>
             </form>

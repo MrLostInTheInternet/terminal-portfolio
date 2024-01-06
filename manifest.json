@@ -9,7 +9,7 @@
         {
             "src": "/bitmap.svg",
             "sizes": "192x192",
-            "type": "svg"
+            "type": "image/svg+xml"
         }
     ]
 }
