@@ -15,7 +15,8 @@ const ProjectWindow: React.FC<ProjectWindowProps> = ({ title, repoOwner, repoNam
     const [focused, setFocused] = useState(false);
     const [repoInfo, setRepoInfo] = useState<RepoInfo | null>(null);
 
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.stopPropagation();
         setFocused(!focused);
     };
 
@@ -47,7 +48,7 @@ const ProjectWindow: React.FC<ProjectWindowProps> = ({ title, repoOwner, repoNam
             onClick={handleClick}
             className={`w-80 md:w-1/5 m-4 p-6 border-2 rounded-md
             ${focused ? 'border-[#efa667] text-[#efa667]' : 'border-gray-800'}
-            bg-gray-700 text-white text-lg cursor-pointer transition duration-300 hover:border-[#efa667] hover:text-[#efa667] shadow-md`}
+            bg-gray-700 text-white text-lg cursor-pointer transition-colors duration-600 hover:border-[#efa667] hover:text-[#efa667] shadow-md`}
         >
             <div className='text-xl text-center flex-1'>{title}</div>
             {focused && repoInfo && (
