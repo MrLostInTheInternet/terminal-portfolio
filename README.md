@@ -21,6 +21,15 @@
 &nbsp;
 &nbsp;
 
+## 🖥️ What is Terminal Portfolio?
+
+It is my attempt to make a linux terminal emulator on a webpage, while learning new topics.
+
+I used AstroJs as the framework and React components for the features. My goal was to create a good looking website while learning Astro
+and getting better at TypeScript and React. I discovered many of websites like mine, everyone is unique and I tried to make mine unique too.
+
+Hope this can be used as a template for more websites like this. I'll keep adding new features when I'll have the chance and some free time.
+
 ## 🛠 Technologies and Tools
 
 <a href="learning-now"></a>
