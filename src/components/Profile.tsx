@@ -20,8 +20,8 @@ const Profile = () => {
 --------------------------------------------------\n
     ~ Name:         Eugen Iofciu Vasile\n
     ~ Age:          ${age} years old\n
-    ~ Knowledge:    Mechanic and Junior Developer\n
-    ~ Nationality:  Romanian\n
+    ~ Knowledge:    Mechanic & Mid Software Developer\n
+    ~ Nationality:  Romanian & Italian\n
     ~ Location:     Bologna, Italy\n
     `;
 
@@ -31,10 +31,11 @@ const Profile = () => {
     ~ Frontend:\n
         - HTML, CSS, JS, TS\n
         - ReactJS, React Native\n
-        - (learning) AstroJS, Angular\n
+        - AstroJS, Angular\n
     ~ Backend:\n
         - Python, Java, C++\n
-        - NodeJS, Spring Boot, Express\n
+        - NodeJS, Spring Boot\n
+        - Golang, Quarkus
     `;
 
     const info3 = `
@@ -74,7 +75,7 @@ const Profile = () => {
     ~ Languages:\n
         - English   -> B2\n
         - Italian   -> C2\n
-        - Romanian  -> Native language\n
+        - Romanian  -> B1\n
     `;
 
     const asciiArt = `
