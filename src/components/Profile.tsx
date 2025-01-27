@@ -20,8 +20,9 @@ const Profile = () => {
 --------------------------------------------------\n
     ~ Name:         Eugen Iofciu Vasile\n
     ~ Age:          ${age} years old\n
-    ~ Knowledge:    Mechanic & Mid Software Developer\n
+    ~ Employment:   Software Developer\n
     ~ Nationality:  Romanian & Italian\n
+    ~ Company:      DIGI Italia TERAOKA\n
     ~ Location:     Bologna, Italy\n
     `;
 
